@@ -14,5 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $datas =[
+        'marca' => 'Nissan',
+        'modello' => 'Silvia s14',
+        'engine' => [
+            '4 cylinders inline',
+            'turbo',
+            '1990'
+        ]
+        ];
+
+    return view('home', $datas);
 });
+Route::get('contacts', function(){
+    return view('contacts', 'contacts');
+});
+
